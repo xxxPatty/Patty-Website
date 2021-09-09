@@ -1,7 +1,59 @@
 version: "2.0"
 
 stories:
+- story: country
+  steps:
+  - intent: country
+  - action: utter_country
 
+- story: song
+  steps:
+  - intent: song
+  - action: utter_song
+
+
+- story: bored
+  steps:
+  - intent: bored
+  - action: utter_bored
+
+
+- story: joke
+  steps:
+  - intent: joke
+  - action: utter_joke
+  
+  
+- story: chat
+  steps:
+  - intent: chat
+  - action: utter_chat
+  
+- story: introduction
+  steps:
+  - intent: ask_introduction
+  - action: utter_introduction
+  
+- story: specialty
+  steps:
+  - intent: ask_specialty
+  - action: utter_specialty
+  
+  
+- story: habbit
+  steps:
+  - intent: ask_habbit
+  - action: utter_habbit
+  
+- story: name
+  steps:
+  - intent: ask_name
+  - action: utter_name
+  - intent: reply_name
+    entities:
+    - sender_name
+  - action: relpy_sender_name
+  
 - story: happy path
   steps:
   - intent: greet

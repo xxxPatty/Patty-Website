@@ -39,6 +39,7 @@ function getBotResponse(text) {
  *
  * for more info: `https://rasa.com/docs/rasa/connectors/your-own-website#request-and-response-format`
  */
+const reply_name = false;
 function setBotResponse(response) {
     // renders bot response after 500 milliseconds
     setTimeout(() => {
@@ -57,6 +58,9 @@ function setBotResponse(response) {
                 // check if the response contains "text"
                 if (Object.hasOwnProperty.call(response[i], "text")) {
                     if (response[i].text != null) {
+                        if (response[i].text.includes("那你呢？")) {
+                            reply_name = true;
+                        }
                         // convert the text to mardown format using showdown.js(https://github.com/showdownjs/showdown);
                         let botResponse;
                         let html = converter.makeHtml(response[i].text);
@@ -366,6 +370,10 @@ $(".usrInput").on("keyup keypress", (e) => {
             e.preventDefault();
             return false;
         }
+        if (reply_name == true) {
+            text = "my_name_is," + text;
+            reply_name = false;
+        }
         // destroy the existing chart, if yu are not using charts, then comment the below lines
         $(".collapsible").remove();
         $(".dropDownMsg").remove();
@@ -396,6 +404,10 @@ $("#sendButton").on("click", (e) => {
         e.preventDefault();
         return false;
     }
+    if (reply_name == true) {
+            text = "my_name_is," + text;
+            reply_name = false;
+        }
     // destroy the existing chart
     if (typeof chatChart !== "undefined") {
         chatChart.destroy();

@@ -1,6 +1,77 @@
 version: "2.0"
 
 nlu:
+- regex: sender_name
+  examples: |
+    - my_name_is,.*
+    
+- intent: reply_name
+  examples: |
+    - 我叫[Patty](sender_name)
+    - 我是[Patty](sender_name)
+    - [my_name_is,](sender_name)
+    
+- intent: country
+  examples: |
+    - 你喜歡的國家
+    - 你喜歡去哪玩
+    - 你喜歡去哪旅遊
+    
+- intent: song
+  examples: |
+    - 你喜歡什麼歌
+    - 推薦一首歌
+    - 推薦歌
+    
+- intent: bored
+  examples: |
+    - 我好無聊
+    - 無聊
+    - 無趣
+
+- intent: joke
+  examples: |
+    - 可以講笑話嗎
+    - 笑話
+    - 說一個笑話
+    - 講一個笑話
+    
+- intent: chat
+  examples: |
+    - 陪我聊天
+    - 聊天
+    - 跟我聊天
+    - 一起聊天
+    - 來聊天
+    
+- intent: ask_introduction
+  examples: |
+    - 自我介紹
+    - 可以自我介紹嗎
+    - 請你自我介紹
+    
+- intent: ask_specialty
+  examples: |
+    - 你的專長是什麼
+    - 專長
+    - 專長是啥
+    - 專業
+    
+- intent: ask_habbit
+  examples: |
+    - 你的興趣是什麼
+    - 興趣
+    - 興趣是啥
+    - 你喜歡幹嘛
+    - 你喜歡做什麼
+    
+- intent: ask_name
+  examples: |
+    - 你叫什麼名字
+    - 名字
+    - 你的名字是
+    - 你叫啥
+    
 - intent: greet
   examples: |
     - hey
@@ -100,6 +171,9 @@ nlu:
     - extremly sad
     - so saad
     - so sad
+    - 我好傷心
+    - 傷心
+    - 難過
 
 - intent: bot_challenge
   examples: |
@@ -107,3 +181,7 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+    - 你是機器人嗎
+    - 你是人類嗎
+    - 我在跟機器人聊天
+    - 我在跟人聊天
