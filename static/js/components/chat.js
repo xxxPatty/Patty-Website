@@ -39,7 +39,7 @@ function getBotResponse(text) {
  *
  * for more info: `https://rasa.com/docs/rasa/connectors/your-own-website#request-and-response-format`
  */
-const reply_name = false;
+var reply_name = false;
 function setBotResponse(response) {
     // renders bot response after 500 milliseconds
     setTimeout(() => {
@@ -370,10 +370,6 @@ $(".usrInput").on("keyup keypress", (e) => {
             e.preventDefault();
             return false;
         }
-        if (reply_name == true) {
-            text = "my_name_is," + text;
-            reply_name = false;
-        }
         // destroy the existing chart, if yu are not using charts, then comment the below lines
         $(".collapsible").remove();
         $(".dropDownMsg").remove();
@@ -391,7 +387,12 @@ $(".usrInput").on("keyup keypress", (e) => {
         $(".quickReplies").remove();
         $(".usrInput").blur();
         setUserResponse(text);
-        send(text);
+        if (reply_name == true) {
+            send("my_name_is,"+text);
+            reply_name = false;
+        }else{
+            send(text);
+        }
         e.preventDefault();
         return false;
     }
@@ -404,10 +405,6 @@ $("#sendButton").on("click", (e) => {
         e.preventDefault();
         return false;
     }
-    if (reply_name == true) {
-            text = "my_name_is," + text;
-            reply_name = false;
-        }
     // destroy the existing chart
     if (typeof chatChart !== "undefined") {
         chatChart.destroy();
@@ -424,7 +421,12 @@ $("#sendButton").on("click", (e) => {
     $(".usrInput").blur();
     $(".dropDownMsg").remove();
     setUserResponse(text);
-    send(text);
+    if (reply_name == true) {
+            send("my_name_is,"+text);
+            reply_name = false;
+        }else{
+            send(text);
+        }
     e.preventDefault();
     return false;
 });
