@@ -1,0 +1,147 @@
+<html>
+  <head>
+    <title>Patty's Website</title>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <meta content="utf-8" http-equiv="encoding"/>
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com"/>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:500&display=swap" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"/>
+
+    <!--Import Font Awesome Icon Font-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous"/>
+
+    <!--Main css-->
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css"/>
+    <!--Import materialize.css-->
+    <link rel="stylesheet" type="text/css" href="../static/css/materialize.min.css"/>
+
+
+    <link rel="stylesheet" type="text/css" href="../static/css/navbar.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/font-awesome.css"/>
+  </head>
+
+  <body>
+      <!--NavBar-->
+      <div class="container2 highlightTextIn" style="position: absolute; top: 10px; right: 10px;">
+          <a href="./index">HOME</a>
+          <a href="./aboutFrame">ABOUT</a>
+          <a href="#">PROJECTS</a>
+        </div>
+      <!--NavBar end-->
+      <!--Project list-->
+        <ul style="margin-top: 20px; margin-left: 20px;">My Projects
+            <li>iOS APP
+                <ul>
+                    <li><a href="https://medium.com/海大-ios-app-程式設計/大富翁demo-cb37fa94bb38" target="_blank">防疫/世界版大富翁</a></li>
+                    <li><a href="https://medium.com/海大-ios-app-程式設計/期末專案-foodie-a48935da7e29" target="_blank">Foodie</a></li>
+                    <li><a href="https://medium.com/海大-ios-app-程式設計/99-5915e0bf9130" target="_blank">Poker-99</a></li>
+                    <li><a href="https://medium.com/海大-ios-app-程式設計/juego-de-arrastre-9ab73aa3da0f" target="_blank">拖曳遊戲 — Juego de arrastre</a></li>
+                    <li><a href="https://medium.com/海大-ios-app-程式設計/我是要成為猜謎王的人-b91ea10dc80d" target="_blank">我是要成為猜謎王的人！</a></li>
+                    <li><a href="https://medium.com/海大-ios-app-程式設計/bonus-10yearchallenge-f750dc297d68" target="_blank">10YearChallenge</a></li>
+                    <li><a href="https://medium.com/海大-ios-app-程式設計/追劇小幫手-bac6a848d776" target="_blank">追劇小幫手</a></li>
+                    <li><a href="https://medium.com/海大-ios-app-程式設計/曾經的迷妹-119b2d7cbc05" target="_blank">曾經的迷妹</a></li>
+              </ul>
+            </li>
+            <li>Web APP
+                <ul>
+                    <li><a href="https://github.com/LiaozhiCheng/CramSchoolApp" target="_blank">CramSchoolApp</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=N2RY60rGT0U" target="_blank">Future Library VIDEO</a></li>
+                    <li><a href="https://docs.google.com/presentation/d/1YAWQKoKm36-rPCqSOy2qaouGubvwyTTjDeQA0QakQTM/edit?usp=sharing" target="_blank">Future Library PTT</a></li>
+                    <li><a href="https://github.com/xxxPatty/FutureLibrary" target="_blank">Future Library Github</a></li>
+                </ul>
+            </li>
+            <li>AI Project
+                <ul>
+                    <li><a href="https://docs.google.com/presentation/d/1Mx4QQ549-lBfAzA7duIut8SJXVX7iV1e6bRtgtdqSvI/edit?usp=sharing" target="_blank">AI Othello Player PTT</a></li>
+                    <li><a href="https://github.com/xxxPatty/Othello3" target="_blank">AI Othello Player Github</a></li>
+                </ul>
+            </li>
+            <li>Android APP
+                <ul>
+                    <li><a href="https://youtu.be/Ad_PWW577rM" target="_blank">CATendar VIDEO</a></li>
+                </ul>
+            </li>
+        </ul>
+        <!--Project list end-->
+      <!--chatbot widget -->
+      <div class="widget">
+        <div class="chat_header">
+          <!--Add the name of the bot here -->
+          <span class="chat_header_title">PattyBot</span>
+          <span class="dropdown-trigger" href="#" data-target="dropdown1">
+            <i class="material-icons"> more_vert </i>
+          </span>
+
+          <!-- Dropdown menu-->
+          <ul id="dropdown1" class="dropdown-content" style="list-style-type: none; padding-left: 0px;">
+            <li><a href="#" id="clear" style="color:rgba(255, 0, 0, 0.4);" onMouseOver="this.style.color='rgba(255, 0, 0, 0.6)'"
+        onMouseOut="this.style.color='rgba(255, 0, 0, 0.4)'">Clear</a></li>
+            <li><a href="#" id="restart" style="color:rgba(255, 0, 0, 0.4);" onMouseOver="this.style.color='rgba(255, 0, 0, 0.6)'"
+        onMouseOut="this.style.color='rgba(255, 0, 0, 0.4)'">Restart</a></li>
+            <li><a href="#" id="close" style="color:rgba(255, 0, 0, 0.4);" onMouseOver="this.style.color='rgba(255, 0, 0, 0.6)'"
+        onMouseOut="this.style.color='rgba(255, 0, 0, 0.4)'">Close</a></li>
+          </ul>
+        </div>
+
+        <!--Chatbot contents goes here -->
+        <div class="chats" id="chats">
+          <div class="clearfix"></div>
+          <img class="botAvatar" src="../static/img/patty_avatar.png"/><span class="botMsg">可以問我名字、興趣、請我說笑話...，但不要對我太嚴格，多一點耐心。❤️</span><div class="clearfix"></div>
+        </div>
+
+        <!--keypad for user to type the message -->
+        <div class="keypad">
+          <textarea
+            id="userInput"
+            placeholder="Type a message..."
+            class="usrInput"
+          ></textarea>
+          <div id="sendButton">
+            <i class="fa fa-paper-plane" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+
+      <!--bot profile-->
+      <div class="profile_div" id="profile_div">
+        <img class="imgProfile" src="../static/img/patty_avatar.png" />
+      </div>
+
+      <!-- Bot pop-up intro -->
+      <div class="tap-target" data-target="profile_div">
+        <div class="tap-target-content">
+          <h5 class="white-text">您好👋</h5>
+          <p class="white-text">
+              我可以幫您回答有關Patty的問題，和了解這個網站的功能。快來跟我聊聊！
+<!--
+            I can help you get started with Rasa and answer your technical
+            questions.
+-->
+          </p>
+        </div>
+      </div>
+      
+    <!--JavaScript at end of body for optimized loading-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/js/lib/materialize.min.js"></script>
+    <script src="../static/js/lib/uuid.min.js"></script>
+    <!--Main Script -->
+    <script type="text/javascript" src="../static/js/script.js"></script>
+    <!--Chart.js Script -->
+    <script type="text/javascript" src="../static/js/lib/chart.min.js"></script>
+    <script type="text/javascript" src="../static/js/lib/showdown.min.js"></script>
+    </body>
+</html>
+
