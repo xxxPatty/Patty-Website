@@ -5,6 +5,18 @@ nlu:
   examples: |
     - my_name_is,.*
     
+- intent: ask_schedule
+  examples: |
+    - 你每天都在做啥？
+    - 每天都在幹嘛？
+    - 時間分配
+    
+- intent: ask_dream
+  examples: |
+    - 你的夢想是什麼？
+    - 夢想是啥？
+    - 夢想
+    
 - intent: reply_name
   examples: |
     - 我叫[Patty](sender_name)

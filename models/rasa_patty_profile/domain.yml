@@ -18,6 +18,8 @@ intents:
   - song
   - country
   - reply_name
+  - ask_dream
+  - ask_schedule
   
 actions:
   - relpy_sender_name
@@ -30,6 +32,40 @@ entities:
   - sender_name
   
 responses:
+  utter_schedule:
+  - text: "這是我一天中的時間分配："
+    custom:
+      payload: chart
+      data:
+        title: 時間分配
+        labels:
+        - 睡覺
+        - 做專案、研究學習
+        - 放鬆娛樂
+        - 吃飯洗澡
+        - 運動
+        - 學習英文
+        backgroundColor:
+        - "#fcffa6"
+        - "#c1ffd7"
+        - "#b5deff"
+        - "#cab8ff"
+        - "#ffadad"
+        - "#79b4b7"
+        chartsData:
+        - 8
+        - 8
+        - 4
+        - 2
+        - 1
+        - 1
+        chartType: pie
+        displayLegend: 'true'
+        
+        
+  utter_dream:
+  - text: "夢想是成為AI工程師。"
+  
   utter_please_rephrase:
   - text: "對不起，我聽不懂。"
   
@@ -40,8 +76,10 @@ responses:
   - text: "泰國、日本、韓國都喜歡。"
   
   utter_song:
-  - text: "推薦你這首 -> https://www.youtube.com/watch?v=WMweEpGlu_U"
-  - text: "我每天都聽 -> https://www.youtube.com/watch?v=WMweEpGlu_U"
+  - text: "推薦你這首 ->"
+    attachment: { "type":"video", "payload":{ "src": "https://www.youtube.com/embed/WMweEpGlu_U" } }
+  - text: "我每天都聽 ->"
+    attachment: { "type":"video", "payload":{ "src": "https://www.youtube.com/embed/WMweEpGlu_U" } }
   
   utter_bored:
   - text: "我陪你。"

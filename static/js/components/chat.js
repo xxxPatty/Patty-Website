@@ -13,7 +13,7 @@ function scrollToBottomOfResults() {
  * @param {String} message user message
  */
 function setUserResponse(message) {
-    const user_response = `<img class="userAvatar" src='./static/img/userAvatar.jpg'><p class="userMsg">${message} </p><div class="clearfix"></div>`;
+    const user_response = `<img class="userAvatar" src='../static/img/userAvatar.jpg'><p class="userMsg" style="background-color:rgba(255,0,0,0.4);">${message} </p><div class="clearfix"></div>`;
     $(user_response).appendTo(".chats").show("slow");
 
     $(".usrInput").val("");
@@ -91,7 +91,7 @@ function setBotResponse(response) {
                         else {
                             // if no markdown formatting found, render the text as it is.
                             if (!botResponse) {
-                                botResponse = `<img class="botAvatar" src="./static/img/patty_avatar.png"/><p class="botMsg">${response[i].text}</p><div class="clearfix"></div>`;
+                                botResponse = `<img class="botAvatar" src="../../static/img/patty_avatar.png"/><p class="botMsg">${response[i].text}</p><div class="clearfix"></div>`;
                             }
                         }
                         // append the bot response on to the chat screen
@@ -121,8 +121,8 @@ function setBotResponse(response) {
                         if (response[i].attachment.type === "video") {
                             // check if the attachment type is "video"
                             const video_url = response[i].attachment.payload.src;
-
-                            const BotResponse = `<div class="video-container"> <iframe src="${video_url}" frameborder="0" allowfullscreen></iframe> </div>`;
+                            //const BotResponse = `<div class="video-container"> <iframe src="${video_url}" frameborder="0" allowfullscreen></iframe> </div>`;
+                            const BotResponse = `<div class="video-container"> '<iframe src="${video_url}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' </div>`;
                             $(BotResponse).appendTo(".chats").hide().fadeIn(1000);
                         }
                     }
