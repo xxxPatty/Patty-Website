@@ -44,21 +44,21 @@
       <!--Slider-->
         <div class="w3-content" style="max-height:window.innerHeight-200px; padding-top: 50px;">
             <div style="justify-content: space-between; display:flex; align-items: center;">
-                <i class="fa fa-chevron-left" aria-hidden="true" onclick="previous();"></i>
+                <i class="fa fa-chevron-left" aria-hidden="true" onclick="previous(); stop();"></i>
                 <img class="mySlides" src="../static/img/specialty.jpg" style="width:100%;display:none">
                 <img class="mySlides" src="../static/img/habbit.jpg" style="width:100%">
                 <img class="mySlides" src="../static/img/skill.jpg" style="width:100%;display:none">
-                <i class="fa fa-chevron-right" aria-hidden="true" onclick="next();"></i>
+                <i class="fa fa-chevron-right" aria-hidden="true" onclick="next(); stop();"></i>
             </div>
             <div class="w3-row-padding w3-section">
                 <div class="w3-col s4">
-                    <img class="demo w3-opacity w3-hover-opacity-off" src="../static/img/specialty.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(1)">
+                    <img class="demo w3-opacity w3-hover-opacity-off" src="../static/img/specialty.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(1); stop();">
                 </div>
                 <div class="w3-col s4">
-                    <img class="demo w3-opacity w3-hover-opacity-off" src="../static/img/habbit.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(2)">
+                    <img class="demo w3-opacity w3-hover-opacity-off" src="../static/img/habbit.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(2); stop();">
                 </div>
                 <div class="w3-col s4">
-                    <img class="demo w3-opacity w3-hover-opacity-off" src="../static/img/skill.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(3)">
+                    <img class="demo w3-opacity w3-hover-opacity-off" src="../static/img/skill.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(3); stop();">
                 </div>
             </div>
         </div>
@@ -129,9 +129,13 @@
       </div>
 <script>
 var page=2;
-    
+var myVar;
 window.onload = function() {            
-    setInterval("next()",5000)
+    myVar = setInterval("next()",5000);
+}
+function stop() {
+//    console.log("停下");
+    clearInterval(myVar);
 }
 function next() {
     if(page<=2) {
