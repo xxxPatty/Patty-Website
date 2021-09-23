@@ -35,36 +35,6 @@
         .zoom:hover {
           transform: scale(2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
         }
-/*
-        @media screen and (min-width: 680px) {
-          nav li:first-child {
-            padding-left: 30px;
-          }
-          nav li {
-            display: inline-block;
-            padding-right: 30px;
-          }
-        }
-        @media (min-width: 480px) and (max-width: 680px) {
-          nav li {
-            text-align: center;
-          }
-          nav ul {
-            columns: 2;
-            -webkit-columns: 2;
-            -moz-columns: 2;
-          }
-        }
-        nav li {
-            text-align: center;
-        }
-        nav ul {
-            display: none;
-            columns: 1;
-            -webkit-columns: 1;
-            -moz-columns: 1;
-        }
-*/
 
     </style>
     <!-- media query preload -->
@@ -78,9 +48,13 @@
     <link rel="preload" href="../static/img/library.png" as="image"/>
     <link rel="preload" href="../static/img/mcts.png" as="image"/>
     <link rel="preload" href="../static/img/catandar.png" as="image"/>
+    <!--loading-->
+    <link href="../static/css/loading.css" rel="stylesheet"/>
   </head>
 
   <body>
+      <div id="loading"></div>
+      <div class="page"></div>
       <!--NavBar-->
       <nav>
         <ul id="nav">
@@ -312,6 +286,25 @@
           <a href="https://medium.com/@l224749391"><i class="fa fa-medium" aria-hidden="true"></i></a>
           <div><p style="color: gray; font-size: 10px;">&copy; 2021 Patty</p></div>
       </div>
+<script>
+function onReady(callback) {
+  var intervalId = window.setInterval(function() {
+    if (document.getElementsByTagName('body')[0] !== undefined) {
+      window.clearInterval(intervalId);
+      callback.call(this);
+    }
+  }, 1000);
+}
+
+function setVisible(selector, visible) {
+  document.querySelector(selector).style.display = visible ? 'block' : 'none';
+}
+
+onReady(function() {
+  setVisible('.page', true);
+  setVisible('#loading', false);
+});
+</script>
     <!--JavaScript at end of body for optimized loading-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="../static/js/lib/materialize.min.js"></script>

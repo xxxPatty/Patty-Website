@@ -35,9 +35,13 @@
     <link rel="preload" href="../static/img/specialty.jpg" as="image"/>
     <link rel="preload" href="../static/img/habbit.jpg" as="image"/>
     <link rel="preload" href="../static/img/skill.jpg" as="image"/>
+    <!--loading-->
+    <link href="../static/css/loading.css" rel="stylesheet"/>
   </head>
 
-  <body>
+  <body> 
+      <div id="loading"></div>
+      <div class="page"></div>
       <!--NavBar-->
       <nav>
         <ul id="nav">
@@ -46,13 +50,6 @@
           <li style="list-style-type: none;"><a href="./projectFrame" style="text-decoration: none;">PROJECT</a></li>
         </ul>
       </nav>
-<!--
-      <div class="container2 highlightTextIn" style="position: absolute; top: 10px; right: 10px;">
-          <a href="#">HOME</a>
-          <a href="./aboutFrame">ABOUT</a>
-          <a href="./projectFrame">PROJECTS</a>
-        </div>
--->
       <!--NavBar end-->
       <!--Slider-->
         <div class="w3-content" style="max-height:window.innerHeight-200px; padding-top: 50px;">
@@ -141,6 +138,26 @@
           <div><p style="color: gray; font-size: 10px;">&copy; 2021 Patty</p></div>
       </div>
 <script>
+//----loading
+function onReady(callback) {
+  var intervalId = window.setInterval(function() {
+    if (document.getElementsByTagName('body')[0] !== undefined) {
+      window.clearInterval(intervalId);
+      callback.call(this);
+    }
+  }, 1000);
+}
+
+function setVisible(selector, visible) {
+  document.querySelector(selector).style.display = visible ? 'block' : 'none';
+}
+
+onReady(function() {
+  setVisible('.page', true);
+  setVisible('#loading', false);
+});
+    
+//----slider
 var page=2;
 var myVar;
 window.onload = function() {            
